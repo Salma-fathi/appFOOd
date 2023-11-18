@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ahhiii/food.dart';
 
-
 class foodtil extends StatelessWidget {
   final Food food;
   final void Function()? onTap;

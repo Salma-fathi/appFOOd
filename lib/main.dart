@@ -1,3 +1,4 @@
+import 'package:flutter_ahhiii/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ahhiii/models/shop.dart';
 import 'package:flutter_ahhiii/page/cartpage.dart';
@@ -7,7 +8,8 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Stripe.publishableKey = 'pk_test_51NvQZACnYtxeOIrz3g0fi98j9JU9fTFTBeLFazyWl1ejhyb9gnXUOvlPnpltg1fgqfjdnUkQv0jfhWZ57x0bnJej00w0kHzCPZ';
+  Stripe.publishableKey =
+      'pk_test_51NvQZACnYtxeOIrz3g0fi98j9JU9fTFTBeLFazyWl1ejhyb9gnXUOvlPnpltg1fgqfjdnUkQv0jfhWZ57x0bnJej00w0kHzCPZ';
   runApp(
     ChangeNotifierProvider(
       create: (context) => Shop(),
@@ -24,13 +26,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      navigatorKey: Get.navigatorKey,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: const page2(),
       routes: {
-        '/cartpage': (context) =>  CartPage(),
+        '/cartpage': (context) =>   Cartpage(),
       },
       debugShowCheckedModeBanner: false,
     );
