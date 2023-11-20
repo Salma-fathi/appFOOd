@@ -21,41 +21,47 @@ class foodtil extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            //image
-            const SizedBox(),
-            Image.asset(
-              food.imagepath,
-              height: 200,
+            // Image
+            SizedBox(
               width: 200,
+              height: 200,
+              child: Image.asset(
+                food.imagepath,
+                fit: BoxFit.cover,
+              ),
             ),
-            // text
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  food.name,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                // price+ rating
-                Text('\$${food.price}'),
-                Row(
+
+            // Text
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
                     Text(
-                      food.rating,
-                      style: TextStyle(color: Colors.grey),
-                    )
+                      food.name,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text('\$${food.price}'),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow,
+                        ),
+                        Text(
+                          food.rating,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
                   ],
-                )
-                // rating
-              ],
+                ),
+              ),
             ),
           ],
         ),
