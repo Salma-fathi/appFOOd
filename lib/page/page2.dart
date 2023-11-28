@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ahhiii/FoodTil.dart';
 import 'package:flutter_ahhiii/models/page_fooddetails.dart';
 import 'package:flutter_ahhiii/models/shop.dart';
+import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
 class page2 extends StatefulWidget {
@@ -28,6 +29,7 @@ class _page2State extends State<page2> {
     final Shop shop = context.read<Shop>();
     final foodMenu = shop.foodMenu;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.grey[100],
         title: const Text(
@@ -60,37 +62,43 @@ class _page2State extends State<page2> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(248, 224, 106, 37),
-              borderRadius: BorderRadius.circular(100),
-            ),
-            margin: const EdgeInsets.symmetric(horizontal: 10),
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      " get to 32% promo",
-                      style: TextStyle(fontSize: 20, color: Colors.white),
-                    ),
-                  ],
-                ),
-                Image.asset(
-                  "lib/images/4.jpg",
-                  height: 80,
-                  width: 100,
-                  alignment: Alignment.bottomLeft,
-                ),
-              ],
-            ),
+          SingleChildScrollView(
+    controller: ScrollController(),
+    scrollDirection: Axis.horizontal,
+    child: Row(
+      children: List.generate(10, (index) {
+        return Container(
+          decoration: BoxDecoration(
+            color: Color.fromARGB(248, 238, 215, 201),
+            borderRadius: BorderRadius.circular(100),
           ),
-          const SizedBox(
-            height: 25,
+          margin: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    " ",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                ],
+              ),
+              Image.asset(
+                "lib/images/7.jpg",
+                height: 80,
+                width: 100,
+                alignment: Alignment.bottomLeft,
+              ),
+            ],
           ),
+        );
+      }),
+    ),
+  ),
+          const Gap(25),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Text(
@@ -102,9 +110,7 @@ class _page2State extends State<page2> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const Gap(10),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(right: 22),

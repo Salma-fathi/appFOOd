@@ -42,10 +42,10 @@ class _FoodDetailsState extends State<FoodDetails> {
         barrierDismissible: false,
         context: context,
         builder: (context) => AlertDialog(
-          backgroundColor: Color.fromARGB(255, 247, 147, 140),
+          backgroundColor: Colors.yellow[300],
           content: const Text(
             "succefully add to cart",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.grey),
           ),
           actions: [
             IconButton(
@@ -139,7 +139,7 @@ class _FoodDetailsState extends State<FoodDetails> {
             ),
           )),
           Container(
-            color: const Color.fromARGB(255, 247, 179, 202),
+            color: Colors.yellow[300],
             padding: const EdgeInsets.all(25),
             child: Column(
               children: [

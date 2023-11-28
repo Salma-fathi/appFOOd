@@ -13,7 +13,7 @@ class foodtil extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: const Alignment(-2.0, -3.0),
-        margin: EdgeInsets.only(bottom: 25, left: 25, right: 25),
+        margin: const EdgeInsets.only(bottom: 25, left: 25, right: 25),
         decoration: BoxDecoration(
           color: Colors.grey[100],
           borderRadius: BorderRadius.circular(50),
@@ -40,7 +40,7 @@ class foodtil extends StatelessWidget {
                   children: [
                     Text(
                       food.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 16,
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.bold,
@@ -49,13 +49,13 @@ class foodtil extends StatelessWidget {
                     Text('\$${food.price}'),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           color: Colors.yellow,
                         ),
                         Text(
                           food.rating,
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),

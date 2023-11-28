@@ -4,21 +4,21 @@ import '../food.dart';
 class Shop extends ChangeNotifier {
   final List<Food> _foodMenu = [
     Food(
-      name: "Bnana",
+      name: "Meat",
       price: "5.000",
-      imagepath: "lib/images/2.jpg",
+      imagepath: "lib/images/5.jpg",
       rating: "4.5",
     ),
     Food(
-      name: "Orange",
+      name: "Pizza",
       price: "9.000",
-      imagepath: "lib/images/3.jpg",
+      imagepath: "lib/images/6.jpg",
       rating: "4.9",
     ),
     Food(
-      name: "Soushi",
+      name: "Pizza hete",
       price: "8.000",
-      imagepath: "lib/images/1.jpg",
+      imagepath: "lib/images/8.jpg",
       rating: "9.5",
     ),
   ];
